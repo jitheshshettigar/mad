@@ -1,0 +1,96 @@
+4th one
+AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.example.wallpaper">
+<uses-permission android:name="android.permission.SET_WALLPAPER">
+</uses-permission>
+<application 
+android:allowBackup="true" 
+android:icon="@mipmap/ic_launcher" 
+android:label="@string/app_name" 
+android:roundIcon="@mipmap/ic_launcher_round" 
+android:supportsRtl="true" 
+android:theme="@style/Theme.WallPaper">
+<activity
+android:name=".MainActivity">
+<intent-filter>
+<action
+android:name="android.intent.action.MAIN"/>
+<category
+android:name="android.intent.category.LAUNCHER"/>
+</intent-filter>
+</activity>
+</application>
+</manifest>
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto" 
+xmlns:tools="http://schemas.android.com/tools" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:gravity="center" tools:context=".MainActivity">
+<Button
+android:id="@+id/btn" 
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_weight="1" 
+android:text="Change Wallpaper" />
+</LinearLayout>
+MainActivity.java
+package com.example.wallpaper;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.WallpaperManager; 
+import android.graphics.BitmapFactory; 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import java.io.IOException; 
+import java.util.Timer; 
+import java.util.TimerTask;
+public class MainActivity extends AppCompatActivity {
+int images[] = new int[]{ 
+R.drawable.i1, R.drawable.i2,
+R.drawable.i3
+};
+Button btn;
+int i=0;
+@Override
+protected void onCreate(Bundle savedInstanceState) { 
+super.onCreate(savedInstanceState); 
+setContentView(R.layout.activity_main);
+btn = findViewById(R.id.btn);
+btn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+30000);
+new
+Timer().
+schedule
+(new
+ChangeWa
+llpaper(
+),0,
+}
+});
+}
+class ChangeWallpaper extends TimerTask{
+@Override
+public void run() {
+WallpaperManager wallpaperManager = 
+WallpaperManager.getInstance(getBaseContext());
+try {wallpaperManager.setBitmap(
+BitmapFactory.decodeResource(getResources(),images[i]));
+i++;
+if(i==3){
+i=0;
+}
+} catch (IOException e) {
+e.printStackTrace();
+}
+}
+}
+}
