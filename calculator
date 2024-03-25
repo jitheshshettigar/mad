@@ -1,0 +1,140 @@
+calculator:
+xml:
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="179dp"
+android:layout_marginBottom="652dp"
+android:text="SimpleCalci"
+android:textSize="24sp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/editText1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="138dp"
+android:layout_marginBottom="540dp"
+android:ems="10"
+android:hint="Enter Number-1"
+android:inputType="textPersonName"
+android:text="" />
+<EditText
+android:id="@+id/editText2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="135dp"
+android:hint="Enter Number-2"
+android:layout_marginBottom="469dp"
+android:ems="10"
+android:inputType="textPersonName"
+android:text="" />
+<TextView
+android:id="@+id/textView1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="233dp"
+android:layout_marginBottom="374dp"
+android:text="0"
+android:textSize="30sp" />
+<Button
+android:id="@+id/button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="103dp"
+android:onClick="div"
+android:layout_marginBottom="208dp"
+android:text="DIV" />
+<Button
+android:id="@+id/button2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="291dp"
+android:onClick="mul"
+android:layout_marginBottom="208dp"
+android:text="MUL" />
+<Button
+android:id="@+id/button3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="101dp"
+android:layout_marginBottom="324dp"
+android:onClick="sub"
+android:text="SUB" />
+<Button
+android:id="@+id/button4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentEnd="true"
+android:layout_alignParentBottom="true"
+android:layout_marginEnd="293dp"
+android:layout_marginBottom="322dp"
+android:onClick="add"
+android:text="ADD" />
+</RelativeLayout>
+java:
+package com.example.calculator;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+EditText e1, e2;
+TextView tv1;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+e1 = findViewById(R.id.editText1);
+e2 = findViewById(R.id.editText2);
+tv1 = findViewById(R.id.textView1);
+}
+public void add(View V){
+int a1 = Integer.parseInt(e1.getText().toString());
+int a2 = Integer.parseInt(e2.getText().toString());
+int result = a1+a2;
+tv1.setText(""+result);
+}
+public void sub(View V){
+int a1 = Integer.parseInt(e1.getText().toString());
+int a2 = Integer.parseInt(e2.getText().toString());
+int result = a1-a2;
+tv1.setText(""+result);
+}
+public void mul(View V){
+int a1 = Integer.parseInt(e1.getText().toString());
+int a2 = Integer.parseInt(e2.getText().toString());
+int result = a1*a2;
+tv1.setText(""+result);
+}
+public void div(View V){
+float a1 = Integer.parseInt(e1.getText().toString());
+float a2 = Integer.parseInt(e2.getText().toString());
+float result = a1/a2;
+tv1.setText(""+result);
+}
+}
