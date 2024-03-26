@@ -1,140 +1,400 @@
-calculator:
-xml:
+activity_main.xml
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android
+"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".MainActivity">
-<TextView
+<Button
+android:id="@+id/btnDot"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="179dp"
-android:layout_marginBottom="652dp"
-android:text="SimpleCalci"
-android:textSize="24sp"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintLeft_toLeftOf="parent"
-app:layout_constraintRight_toRightOf="parent"
-app:layout_constraintTop_toTopOf="parent" />
-<EditText
-android:id="@+id/editText1"
+android:layout_marginTop="30dp"
+android:text="."
+app:layout_constraintEnd_toStartOf="@+id/btn2"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btn7"/>
+Department of Computer Science & Engineering, SCEM, MangaluruPage 1
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+<Button
+android:id="@+id/btn8"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="138dp"
-android:layout_marginBottom="540dp"
-android:ems="10"
-android:hint="Enter Number-1"
-android:inputType="textPersonName"
-android:text="" />
-<EditText
-android:id="@+id/editText2"
+android:layout_marginTop="23dp"
+android:text="8"
+app:layout_constraintEnd_toStartOf="@+id/btn3"
+app:layout_constraintStart_toEndOf="@+id/btn1"
+app:layout_constraintTop_toBottomOf="@+id/btn5"/>
+<Button
+android:id="@+id/btnDiv"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="135dp"
-android:hint="Enter Number-2"
-android:layout_marginBottom="469dp"
-android:ems="10"
-android:inputType="textPersonName"
-android:text="" />
-<TextView
-android:id="@+id/textView1"
+android:layout_marginTop="30dp"
+android:text="/"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.466"
+app:layout_constraintStart_toEndOf="@+id/btn3"
+app:layout_constraintTop_toBottomOf="@+id/btnMul" />
+<Button
+android:id="@+id/btnClear"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="233dp"
-android:layout_marginBottom="374dp"
+android:layout_marginTop="30dp"
+android:text="C"
+app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+app:layout_constraintHorizontal_bias="0.533"
+app:layout_constraintStart_toEndOf="@+id/btn2"
+app:layout_constraintTop_toBottomOf="@+id/btn9" />
+<Button
+android:id="@+id/btn9"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="23dp"
+android:text="9"
+app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+app:layout_constraintHorizontal_bias="0.533"
+app:layout_constraintStart_toEndOf="@+id/btn2"
+app:layout_constraintTop_toBottomOf="@+id/btn6" />
+<Button
+Department of Computer Science & Engineering, SCEM, MangaluruPage 2
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+android:id="@+id/btnMul"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="23dp"
+android:text="x"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.466"
+app:layout_constraintStart_toEndOf="@+id/btn3"
+app:layout_constraintTop_toBottomOf="@+id/btnSub" />
+<Button
+android:id="@+id/btn7"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="23dp"
+android:text="7"
+app:layout_constraintEnd_toStartOf="@+id/btn2"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btn4" />
+<Button
+android:id="@+id/btn0"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="30dp"
 android:text="0"
-android:textSize="30sp" />
+app:layout_constraintEnd_toStartOf="@+id/btn3"
+app:layout_constraintStart_toEndOf="@+id/btn1"
+app:layout_constraintTop_toBottomOf="@+id/btn8" />
 <Button
-android:id="@+id/button"
+android:id="@+id/btn5"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="103dp"
-android:onClick="div"
-android:layout_marginBottom="208dp"
-android:text="DIV" />
+android:layout_marginTop="30dp"
+android:text="5"
+app:layout_constraintEnd_toStartOf="@+id/btn3"
+app:layout_constraintStart_toEndOf="@+id/btn1"
+app:layout_constraintTop_toBottomOf="@+id/btn2"/>
+Department of Computer Science & Engineering, SCEM, MangaluruPage 3
+Mobile Application Development Laboratory(18CSMP68) VI SEM
 <Button
-android:id="@+id/button2"
+android:id="@+id/btn4"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="291dp"
-android:onClick="mul"
-android:layout_marginBottom="208dp"
-android:text="MUL" />
+android:layout_marginTop="30dp"
+android:text="4"
+app:layout_constraintEnd_toStartOf="@+id/btn2"
+app:layout_constraintStart_toEndOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btn1"/>
 <Button
-android:id="@+id/button3"
+android:id="@+id/btnSub"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="101dp"
-android:layout_marginBottom="324dp"
-android:onClick="sub"
-android:text="SUB" />
+android:layout_marginTop="30dp"
+android:text="-"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.466"
+app:layout_constraintStart_toEndOf ="@+id/btn3"
+app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 <Button
-android:id="@+id/button4"
+android:id="@+id/btn6"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:layout_alignParentEnd="true"
-android:layout_alignParentBottom="true"
-android:layout_marginEnd="293dp"
-android:layout_marginBottom="322dp"
-android:onClick="add"
-android:text="ADD" />
-</RelativeLayout>
-java:
+android:layout_marginTop="30dp"
+android:text="6"
+app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+app:layout_constraintHorizontal_bias="0.533"
+app:layout_constraintStart_toEndOf ="@+id/btn2"
+app:layout_constraintTop_toBottomOf="@+id/btn3" />
+<Button
+android:id="@+id/btn3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="83dp"
+android:text="3"
+app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toEndOf="@+id/btn2"
+app:layout_constraintTop_toBottomOf="@+id/display" />
+Department of Computer Science & Engineering, SCEM, MangaluruPage 4
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+<Button
+android:id="@+id/btn1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="83dp"
+android:text="1"
+app:layout_constraintEnd_toStartOf="@+id/btn2"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/display" />
+<Button
+android:id="@+id/btn2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="83dp"
+android:text="2"
+app:layout_constraintEnd_toStartOf="@+id/btn3"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toEndOf="@+id/btn 1"
+app:layout_constraintTop_toBottomOf="@+id/display" />
+<Button
+android:id="@+id/btnAdd"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="83dp" android:text="+"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.5"
+app:layout_constraintStart_toEndOf="@+id/btn3"
+app:layout_constraintTop_toBottomOf="@+id/display" />
+<Button
+android:id="@+id/btnEqual"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginEnd="164dp"
+android:layout_marginLeft="154dp"
+android:layout_marginRight="164dp"
+android:layout_marginStart="154dp"
+android:layout_marginTop="28dp"
+android:text="="
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btnClear" />
+Department of Computer Science & Engineering, SCEM, MangaluruPage 5
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+<EditText
+android:id="@+id/display"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginEnd="89dp"
+android:layout_marginLeft="112dp"
+android:layout_marginRight="89dp"
+android:layout_marginStart="112dp"
+android:layout_marginTop="40dp"
+android:ems="10"
+android:hint="Your Values Goes Here"
+android:inputType="text"
+android:textDirection="ltr"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView" />
+<TextView
+android:id="@+id/textView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginEnd="178dp"
+android:layout_marginLeft="175dp"
+android:layout_marginRight="178dp"
+android:layout_marginStart="175dp"
+android:layout_marginTop="36dp"
+android:text="Calculator"
+android:textSize="30dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.487"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+Department of Computer Science & Engineering, SCEM, MangaluruPage 6
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+MainActivity.java
 package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import
+android.widget.Button;
+import
+android.widget.EditText;
+import android.widget.Toast;
+import
+java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
-EditText e1, e2;
-TextView tv1;
+Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9;
+Button btnAdd,btnSub,btnMul,btnDiv,btnEqual,btnDot,btnClear;
+EditText display;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
 setContentView(R.layout.activity_main);
-e1 = findViewById(R.id.editText1);
-e2 = findViewById(R.id.editText2);
-tv1 = findViewById(R.id.textView1);
+btn1 = (Button)findViewById(R.id.btn1);
+btn2 = (Button)findViewById(R.id.btn2);
+btn3 = (Button)findViewById(R.id.btn3);
+btn4 = (Button)findViewById(R.id.btn4);
+btn5 = (Button)findViewById(R.id.btn5);
+btn6 = (Button)findViewById(R.id.btn6);
+btn7 = (Button)findViewById(R.id.btn7);
+btn8 = (Button)findViewById(R.id.btn8);
+btn9 = (Button)findViewById(R.id.btn9);
+btn0 = (Button)findViewById(R.id.btn0);
+btnAdd =(Button)findViewById(R.id.btnAdd);
+btnSub =(Button)findViewById(R.id.btnSub);
+btnMul =(Button)findViewById(R.id.btnMul);
+btnDiv =(Button)findViewById(R.id.btnDiv);
+btnDot =(Button)findViewById(R.id.btnDot);
+btnEqual=(Button)findViewById(R.id.btnEqual);
+btnClear=(Button)findViewById(R.id.btnClear);
+Department of Computer Science & Engineering, SCEM, MangaluruPage 7
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+display =(EditText)findViewById(R.id.display);
+btn1.setOnClickListener(new View.OnClickListener()
+@Override
+public void onClick(View v) {
+display.append("1");
 }
-public void add(View V){
-int a1 = Integer.parseInt(e1.getText().toString());
-int a2 = Integer.parseInt(e2.getText().toString());
-int result = a1+a2;
-tv1.setText(""+result);
+});
+btn2.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("2");
 }
-public void sub(View V){
-int a1 = Integer.parseInt(e1.getText().toString());
-int a2 = Integer.parseInt(e2.getText().toString());
-int result = a1-a2;
-tv1.setText(""+result);
+});
+btn3.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("3");
 }
-public void mul(View V){
-int a1 = Integer.parseInt(e1.getText().toString());
-int a2 = Integer.parseInt(e2.getText().toString());
-int result = a1*a2;
-tv1.setText(""+result);
+});
+btn4.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("4");
 }
-public void div(View V){
-float a1 = Integer.parseInt(e1.getText().toString());
-float a2 = Integer.parseInt(e2.getText().toString());
-float result = a1/a2;
-tv1.setText(""+result);
+});
+btn5.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("5");
+}
+});
+btn6.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+Department of Computer Science & Engineering, SCEM, MangaluruPage 8
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+display.append("6");
+}
+});
+btn7.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("7");
+}
+});
+btn8.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("8");
+}
+});
+btn9.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("9");
+}
+});
+btn0.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("0");
+}
+});
+btnAdd.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("+");
+}
+});
+btnSub.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("-");
+Department of Computer Science & Engineering, SCEM, MangaluruPage 9
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+}
+});
+btnMul.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("x");
+}
+});
+btnDiv.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append("/");
+}
+});
+btnDot.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.append(".");
+}
+});
+btnClear.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+display.setText("");
+}
+});
+btnEqual.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+String data = display.getText().toString();
+if(data.contains("-")){
+String operands[] = data.split("-");
+double op1 = Double.parseDouble(operands[0]);
+double op2 = Double.parseDouble(operands[1]);
+double res = op1-op2; display.setText(String.valueOf(res));}
+if(data.contains("x")){
+String operands[] = data.split("x");
+double op1 = Double.parseDouble(operands[0]);
+double op2 = Double.parseDouble(operands[1]);
+Department of Computer Science & Engineering, SCEM, MangaluruPage 10
+Mobile Application Development Laboratory(18CSMP68) VI SEM
+double res = op1*op2;
+display.setText(String.valueOf(res));
+}
+if(data.contains("/")){
+String operands[] = data.split("/");
+double op1 = Double.parseDouble(operands[0]);
+double op2 = Double.parseDouble(operands[1]);
+if(op2==0){
+Toast.makeText(MainActivity.this,
+"Divide by zero is not possible", Toast.LENGTH_SHORT).show();
+}
+double res = op1/op2;
+display.setText(String.valueOf(res));
+}
+if(data.contains("+")){
+String operands[] =data.split(Pattern.quote("+"));
+double op1 = Double.parseDouble(operands[0]);
+double op2 = Double.parseDouble(operands[1]);
+double res = op1+op2;
+display.setText(String.valueOf(res));
+}
+}
+});
 }
 }
