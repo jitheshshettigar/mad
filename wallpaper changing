@@ -66,6 +66,7 @@ btn = findViewById(R.id.btn);
 btn.setOnClickListener(new View.OnClickListener() {
 @Override
 public void onClick(View v) {
+new Timer().schedule(changeWallpapper(),0,
 30000);
 new
 Timer().
